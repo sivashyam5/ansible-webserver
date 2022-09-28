@@ -19,5 +19,13 @@
 
   - script: |
       ansible-lint
-    displayName: 'Run ansible-lint'  
+    displayName: 'Run ansible-lint'
+
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: 'ansible-lint'
+      workingDirectory: '$(Build.SourcesDirectory)/playbooks'
+    displayName: 'Executable Ansible-lint'
+    
 
