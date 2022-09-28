@@ -6,6 +6,8 @@
 
   steps:
   - script: |
-      echo "First pipeline script"
-      echo "Another line of code"
+      sudo apt-get update -y
+      sudo apt install -y ansible
+      ansible --version
+    displayName: 'Installing Ansible'  
 
