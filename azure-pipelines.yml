@@ -25,7 +25,8 @@
     inputs:
       targetType: 'inline'
       script: 'ansible-lint'
-      workingDirectory: '$(Build.SourcesDirectory)/playbooks'
+      workingDirectory: '$(Build.SourceDirectory)/playbooks'
     displayName: 'Executable Ansible-lint'
+
     
 
