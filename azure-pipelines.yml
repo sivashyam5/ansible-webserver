@@ -27,5 +27,12 @@
   - script: ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu -i ./host_inventory ./playbooks/apache-install.yml --private-key /home/ubuntu/.ssh/vm-instance-key.pem
     displayName: 'Installing Apache'
 
+  - script: ANSIBLE_HOST_KEY_CHECKING=False export ANSIBLE_ROLES_PATH=./roles && ansible-playbook -u ubuntu -i ./host_inventory ./playbooks/website-update.yml --private-key /home/ubuntu/.ssh/vm-instance-key.pem
+    displayName: 'Running Website Update test'
+
+  - script: ANSIBLE_HOST_KEY_CHECKING=False export ANSIBLE_ROLES_PATH=./roles && ansible-playbook -u ubuntu -i ./host_inventory ./playbooks/website-test.yml --private-key /home/ubuntu/.ssh/vm-instance-key.pem
+    displayName: 'Running Website test '
+
+
     
 
