@@ -39,9 +39,9 @@ jobs:
     runs_on: self-hosted
     steps:
     - name: Installing apache'
-    run: |
-      workdir="${GITHUB_WORKSPACE}" 
-      ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu -i $workdir/host_inventory $workdir/playbooks/apache-install.yml --private-key '/home/ubuntu/.ssh/vm-instance-key.pem'
+      run: |
+        workdir="${GITHUB_WORKSPACE}" 
+        ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu -i $workdir/host_inventory $workdir/playbooks/apache-install.yml --private-key '/home/ubuntu/.ssh/vm-instance-key.pem'
 
 
 
