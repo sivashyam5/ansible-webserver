@@ -36,7 +36,7 @@ jobs:
       
   install_apache:
     needs: run_ansible_lint
-    runs_on: self-hosted
+    runs-on: self-hosted
     steps:
     - name: Installing apache
       run: |
