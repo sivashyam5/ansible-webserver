@@ -18,7 +18,7 @@ jobs:
 
   install_ansible_lint:
     needs: repo_updated
-    runs-on: slef-hosted
+    runs-on: self-hosted
     steps:
     - name: Installing ansible-lint
       run: |
