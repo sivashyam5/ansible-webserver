@@ -40,7 +40,7 @@ jobs:
     steps:
     - name: Installing apache
       run: |
-        workdir="${GITHUB_WORKSPACE}" 
+        workdir="${GITHUB_WORKSPACE}"
         ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu -i $workdir/host_inventory $workdir/playbooks/apache-install.yml --private-key '/home/ubuntu/.ssh/vm-instance-key.pem'
         
   website-update:
@@ -49,7 +49,7 @@ jobs:
     steps:
     - name: website updating
       run: |
-        workdir=“${GITHUB_WORKSPACE}”
+        workdir="${GITHUB_WORKSPACE}"
         ANSIBLE_HOST_KEY_CHECKING=False export ANSIBLE_ROLES_PATH=$workdir/roles && ansible-playbook -u ubuntu -i $workdir/host_inventory $workdir/playbooks/website-update.yml --private-key '/home/ubuntu/.ssh/vm-instance-key.pem'
         
   website-test:
@@ -58,7 +58,7 @@ jobs:
     steps:
     - name: website testing
       run: |
-        workdir=“${GITHUB_WORKSPACE}”
+        workdir="${GITHUB_WORKSPACE}"
         ANSIBLE_HOST_KEY_CHECKING=False export ANSIBLE_ROLES_PATH=$workdir/roles && ansible-playbook -u ubuntu -i $workdir/host_inventory $workdir/playbooks/website-test.yml --private-key '/home/ubuntu/.ssh/vm-instance-key.pem' 
 
 
